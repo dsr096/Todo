@@ -1,0 +1,118 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding-top: 80px; /* to prevent content going under the fixed navbar */
+}
+
+.navbar {
+  width: 100%;
+  position: fixed;  /* Always on top */
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background: linear-gradient(90deg, #ff7e5f, #feb47b, #ff6a00);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+/* Brand / Logo */
+.navbar-left .navbar-logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #ff6a00, 0 0 30px #ff6a00;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff6a00, 0 0 40px #ff6a00;
+  }
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.clerk-sign-in-button,
+.clerk-sign-up-button {
+  background: #fff;
+  color: #ff6a00;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(255, 106, 0, 0.4);
+}
+
+.clerk-sign-in-button:hover,
+.clerk-sign-up-button:hover {
+  background: #ff6a00;
+  color: white;
+  transform: scale(1.05);
+}
+
+.welcome-text {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #222222;  /* Dark solid color */
+}
+
+
+.clerk-user-button {
+  --clerk-user-button-color: white;
+  --clerk-user-button-hover-color: #ffde59;
+  --clerk-user-button-background: transparent;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 15px 20px;
+    gap: 10px;
+  }
+
+  .navbar-left .navbar-logo {
+    font-size: 1.5rem;
+  }
+
+  .navbar-right {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .clerk-sign-in-button,
+  .clerk-sign-up-button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navbar-left .navbar-logo {
+    font-size: 1.3rem;
+  }
+
+  .welcome-text {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+}
