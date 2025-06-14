@@ -1,5 +1,5 @@
 {
-  "homepage": "https://dsr096.github.io/Todo",
+  
 
   "name": "todo",
   
@@ -21,9 +21,7 @@
   "lint": "eslint .",
   
     
-  "preview": "vite preview",
-   "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist"
+  "preview": "vite preview"
   
   },
   
